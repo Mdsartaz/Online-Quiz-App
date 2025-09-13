@@ -1,0 +1,244 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 600px;
+    overflow: hidden;
+}
+
+.header {
+    background: linear-gradient(to right, #4b6cb7, #182848);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
+.timer-container {
+    background-color: #f0f8ff;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #182848;
+}
+
+.timer {
+    margin-left: 10px;
+    background-color: #182848;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    min-width: 80px;
+    text-align: center;
+}
+
+.content {
+    padding: 25px;
+}
+
+.welcome-screen, .quiz-screen, .results-screen {
+    transition: opacity 0.3s ease;
+}
+
+.topic-selection {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.topic-btn {
+    padding: 15px;
+    border: 2px solid #4b6cb7;
+    border-radius: 10px;
+    background-color: white;
+    color: #4b6cb7;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.topic-btn:hover {
+    background-color: #4b6cb7;
+    color: white;
+    transform: translateY(-3px);
+}
+
+.topic-btn i {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.question-number {
+    color: #4b6cb7;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.question {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.option {
+    padding: 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.option:hover {
+    border-color: #4b6cb7;
+    background-color: #f0f8ff;
+}
+
+.option.selected {
+    border-color: #4b6cb7;
+    background-color: #e3eeff;
+}
+
+.option.correct {
+    border-color: #28a745;
+    background-color: #d4edda;
+}
+
+.option.incorrect {
+    border-color: #dc3545;
+    background-color: #f8d7da;
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.btn-primary {
+    background-color: #4b6cb7;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #3a5999;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: #f0f8ff;
+    color: #4b6cb7;
+    border: 1px solid #4b6cb7;
+}
+
+.btn-secondary:hover {
+    background-color: #e3eeff;
+}
+
+.results-screen {
+    text-align: center;
+}
+
+.score-circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: conic-gradient(#4b6cb7 0% var(--percent), #e0e0e0 var(--percent) 100%);
+    margin: 20px auto;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.score-inner {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #4b6cb7;
+}
+
+.score-text {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+.progress-bar {
+    height: 8px;
+    background-color: #e0e0e0;
+    border-radius: 4px;
+    margin: 15px 0;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    background-color: #4b6cb7;
+    border-radius: 4px;
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+@media (max-width: 500px) {
+    .topic-selection {
+        grid-template-columns: 1fr;
+    }
+    
+    .navigation {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    button {
+        width: 100%;
+    }
+}
